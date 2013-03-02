@@ -6,6 +6,7 @@
 #include "irc.h"
 #include "net.h"
 #include "base58.h"
+#include "packetlog.h"
 
 #include <boost/algorithm/string/predicate.hpp> // for startswith() and endswith()
 
@@ -72,6 +73,8 @@ static bool Send(SOCKET hSocket, const char* pszSend)
         if (ret < 0)
             return false;
         psz += ret;
+
+	LogPacketSend("irc", ret);
     }
     return true;
 }

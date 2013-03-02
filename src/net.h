@@ -20,6 +20,7 @@
 #include "addrman.h"
 #include "hash.h"
 #include "bloom.h"
+#include "packetlog.h"
 
 class CNode;
 class CBlockIndex;
@@ -375,6 +376,8 @@ public:
         if (fDebug) {
             printf("(%d bytes)\n", nSize);
         }
+
+	LogPacketSend((char*) (((char*) &vSend[nHeaderStart]) + 4), nSize);
 
         nHeaderStart = -1;
         nMessageStart = -1;
