@@ -38,6 +38,7 @@ test_bitcoin_SOURCES = \
   base32_tests.cpp \
   base58_tests.cpp \
   base64_tests.cpp \
+  blockfile_data_tests.cpp \
   bloom_tests.cpp \
   canonical_tests.cpp \
   checkblock_tests.cpp \
